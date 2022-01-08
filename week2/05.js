@@ -2,23 +2,24 @@
 
 function maxZeros(nums){
 
-    var i=0; 
+    var i = 1 ;
     var save=[];
     var n=1 ;
-    while(i<= nums.length){
+    while(i<nums.length){
 
-        if(nums[i]==nums[i+1]==0){
-            n =n+1 ;
-            save.push(n);
+        if(nums[i-1]==nums[i]&&nums[i]==0){
+            n = n+1 ;
+            save.push(n) ;
         }
-        else{
-            n=1 ;
-            save.push(parseInt("0"));
+        else {
+            n=1;
+            save.push(n-1);
         }
-        i++ ;
+        i=i+1 ;
     }
-    console.log(save);
+console.log(Math.max(...save));
 }
+
     
 //test
 maxZeros([0, 1, 0, 0]); // 得到 2
